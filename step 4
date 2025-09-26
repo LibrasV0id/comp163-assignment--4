@@ -1,0 +1,107 @@
+COMP163 = input("Are you in COMP 163? (Yes/No) ")
+
+if COMP163.lower() == 'no':
+    print("What's not clicking\n")
+elif COMP163.lower() == 'yes':
+    print("In the clurb we all fam.\n")
+
+student_name = "Khal Dogan"
+current_gpa = 4.0
+study_hours = int(12)
+social_points = int(37)
+stress_level = int(92)
+
+COMP163_teacher = "Professor Rhodes"
+
+if "Rhodes" in COMP163_teacher:
+    social_points += 15
+if ("Professor" not in COMP163_teacher or "Dr" not in COMP163_teacher) and stress_level > 50:
+    study_hours //= 2  
+
+
+adventurer = (current_gpa > 3.5) and (social_points >= 20)
+can_adventure = adventurer and (COMP163_teacher is not None)
+
+stress_relief = 0
+if social_points >= 75:
+    stress_relief = (stress_level // 2)
+elif social_points >= 50:
+    stress_relief = (stress_level / 2)
+
+
+if current_gpa <= 2.1:
+    print("You cannot embark on this Journey yet.")
+elif 2.1 < current_gpa <= 3.8 or stress_relief > 65:
+    print("It is probably best that you continue to grow.")
+elif current_gpa >= 3.8:
+    if student_name is not None and can_adventure:
+        if "Khal" in student_name:
+            print(f"{student_name}! Transform and Roll Out!!")
+        else:
+            print("Go slay Queen, Adventurer!")
+    elif student_name is None:
+        print("What is your name Adventurer?")
+else:
+    print("Are you even an Adventurer, Bro?")
+    stress_level = 0
+
+study_options = ["English", "History", "Math", "Science", "Comp163"]
+
+game_class = input(f"\nWhat would you like to study? Here are your options:{study_options}")
+
+English = "Priest"
+History = "Warrior"
+Math = "Assassin"
+Science = "Mage"
+Comp163 = "Playing God, are you?"
+
+if game_class == "English":
+    print(f"You class is {English}")
+elif game_class == "History":
+    print(f"You class is {History}")
+elif game_class == "Math":
+    print(f"You class is {Math}")
+elif game_class == "Science":
+    print(f"You class is {Science}")
+elif game_class == "Comp163":
+    new_class = input(f"{Comp163} | Unfortunately not, Choose Class(English, History, Math, & Science), but you can study Comp 163. ")
+    if new_class == "English":
+        print("You're a Priest studying Godhood")
+    elif new_class == "History":
+        print("You're a Warrior studying Godhood")
+    elif new_class == "Math":
+        print("You're a Assassin studying Godhood")
+    elif new_class == "Science":
+        print("You're a Mage studying Godhood")
+    else:
+        print("Bra that class isn't here. Go study programing.")
+
+print(" \n")
+
+semester_outcome = ""
+
+if current_gpa >= 3.5 and stress_level < 35:
+    semester_outcome = "The stars cannot reach you, but your still rising."
+elif current_gpa >= 3.0 and social_points >= 45:
+    semester_outcome = "Your my SuperStar!"
+elif current_gpa < 2.5 and stress_level > 70:
+    semester_outcome = "That Bed has been calling Your Name, and you just won't answer."
+elif study_hours < 5:
+    semester_outcome = "Hopefully your at least not BORING."
+elif social_points < 15:
+    semester_outcome = "Casper has more friends than you!"
+else:
+    semester_outcome = "I don't think your cut out for this. Are you even trying?"
+
+print(f"Semester Outcome: {semester_outcome}")
+
+final_states = {
+    'Student Name': student_name,
+    'Current GPA': current_gpa,
+    'Study  Hours': study_hours,
+    'Social Points': social_points,
+    'Stress Level': stress_level,
+    'Stress Relief': stress_relief,
+}
+
+print("\nFinal States:", final_states)

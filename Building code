@@ -1,0 +1,5 @@
+student_name = "Khal Dogan"
+current_gpa = 4.0
+study_hours = int(12)
+social_points = int(37)
+stress_level = int(92)
